@@ -4,6 +4,7 @@ public class Main {
         double[] array = {1, 5, 2, 4, 7, 9};
         double[] array2 = {1, 5, 2, 4, 7, 9};
         double[] array3 = {7, 2, 3, 5, 8, 6};
+        double[]array4={1,3,5,6,8};
         int n = array.length;
 
         Vector vector = new Vector(array);
@@ -13,6 +14,7 @@ public class Main {
 
         Vector vector4 = new Vector(array2);
         Vector vector5 = new Vector(array3);
+        Vector vector6=new Vector(array4);
 
         System.out.println("vector = " + vector);
         System.out.println("vector1 = " + vector1);
@@ -24,22 +26,23 @@ public class Main {
         System.out.println("Adding another vector to a vector = " + vector.add(vector4));
         System.out.println("Subtracting another vector from a vector(vector3-vector5) " + vector3.div(vector5));
 
-        double skalar=3;
-        System.out.println("Multiplying a vector by a scalar = "+vector3.multScalar(skalar));
-        System.out.println("Vector reverse = "+vector1.getRotation());
-        System.out.println("Get lenght vector = "+vector.getLenght());
+        double skalar = 3;
+        System.out.println("Multiplying a vector by a scalar = " + vector3.multScalar(skalar));
+        System.out.println("Vector reverse = " + vector1.getRotation());
+        System.out.println("Get lenght vector = " + vector.getLenght());
 
         System.out.println(vector);
         System.out.println(vector.getElement(2));
-        System.out.println(vector.setElement(2,10));
+        System.out.println(vector.setElement(2, 10));
         System.out.println(vector);
 
         System.out.println(vector+"  "+vector1+"  "+vector2+"  "+vector3+"  "+vector4+"  "+vector5);
         System.out.println("Equals = " + vector.equals(vector1));
-        System.out.println("Static additional of vectors = "+Vector.add(vector3,vector4));
-        System.out.println("Static substracting of vectors = "+Vector.div(vector,vector5));
-        System.out.println("Scalar multiplied of vectors = "+Vector.mult(vector3,vector5));
+        System.out.println("Static additional of vectors = " + Vector.add(vector3, vector4));
+        System.out.println("Static substracting of vectors = " + Vector.div(vector, vector5));
+        System.out.println("Scalar multiplied of vectors = " + Vector.mult(vector3, vector5));
 
+        System.out.println(vector6.add(vector5));// проверка сложения с разной размерностью
 
     }
 }

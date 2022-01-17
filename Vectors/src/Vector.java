@@ -13,6 +13,7 @@ public class Vector {
 
     // конструктор с массивом
     public Vector(double[] vector) {
+
         this.vector = vector;
     }
 
@@ -45,8 +46,12 @@ public class Vector {
 
     //сложение векторов
     public Vector add(Vector anotherVector) {
-        int vectorLenght = Math.max(vector.length, anotherVector.vector.length);
-        for (int i = 0; i < vectorLenght; i++) {
+        if (anotherVector.vector.length> vector.length){
+            vector= Arrays.copyOf(vector,anotherVector.vector.length);
+
+        }
+
+        for (int i = 0; i < vector.length; i++) {
             vector[i] += anotherVector.vector[i];
         }
         return this;
@@ -54,9 +59,11 @@ public class Vector {
 
     //вычитание векторов
     public Vector div(Vector anotherVector) {
-        int vectorLenght = Math.max(vector.length, anotherVector.vector.length);
-        for (int i = 0; i < vectorLenght; i++) {
-            vector[i] = vector[i]- anotherVector.vector[i];
+        if (anotherVector.vector.length> vector.length){
+            vector= Arrays.copyOf(vector,anotherVector.vector.length);
+        }
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = vector[i] - anotherVector.vector[i];
         }
         return this;
     }
@@ -126,7 +133,7 @@ public class Vector {
     //скалярное произведение векторов
     public double mult(Vector anotherVector) {
         double s = 0;
-        int vectorLenght=Math.max(vector.length, anotherVector.vector.length);
+        int vectorLenght = Math.max(vector.length, anotherVector.vector.length);
         for (int i = 0; i < vectorLenght; i++) {
             s += vector[i] * anotherVector.vector[i];
         }
@@ -138,12 +145,13 @@ public class Vector {
     }
 
     //статический метод сложения векторов
-    public static Vector add(Vector vector1, Vector anotherVector){
+    public static Vector add(Vector vector1, Vector anotherVector) {
 
         return vector1.add(anotherVector);
     }
+
     //статический метод вычетания векторов
-    public static Vector div(Vector vector1, Vector anotherVector){
+    public static Vector div(Vector vector1, Vector anotherVector) {
         return vector1.div(anotherVector);
     }
 
