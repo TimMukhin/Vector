@@ -46,9 +46,8 @@ public class Vector {
 
     //сложение векторов
     public Vector add(Vector anotherVector) {
-        if (anotherVector.vector.length> vector.length){
-            vector= Arrays.copyOf(vector,anotherVector.vector.length);
-
+        if (anotherVector.vector.length > vector.length) {
+            vector = Arrays.copyOf(vector, anotherVector.vector.length);
         }
 
         for (int i = 0; i < vector.length; i++) {
@@ -59,8 +58,8 @@ public class Vector {
 
     //вычитание векторов
     public Vector div(Vector anotherVector) {
-        if (anotherVector.vector.length> vector.length){
-            vector= Arrays.copyOf(vector,anotherVector.vector.length);
+        if (anotherVector.vector.length > vector.length) {
+            vector = Arrays.copyOf(vector, anotherVector.vector.length);
         }
         for (int i = 0; i < vector.length; i++) {
             vector[i] = vector[i] - anotherVector.vector[i];
@@ -146,13 +145,14 @@ public class Vector {
 
     //статический метод сложения векторов
     public static Vector add(Vector vector1, Vector anotherVector) {
-
-        return vector1.add(anotherVector);
+        Vector result = new Vector(vector1);
+        return result.add(anotherVector);
     }
 
     //статический метод вычетания векторов
     public static Vector div(Vector vector1, Vector anotherVector) {
-        return vector1.div(anotherVector);
+        Vector result = new Vector(vector1);
+        return result.div(anotherVector);
     }
 
 }

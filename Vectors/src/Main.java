@@ -4,7 +4,7 @@ public class Main {
         double[] array = {1, 5, 2, 4, 7, 9};
         double[] array2 = {1, 5, 2, 4, 7, 9};
         double[] array3 = {7, 2, 3, 5, 8, 6};
-        double[]array4={1,3,5,6,8};
+        double[] array4 = {1, 3, 5, 6, 8};
         int n = array.length;
 
         Vector vector = new Vector(array);
@@ -14,7 +14,7 @@ public class Main {
 
         Vector vector4 = new Vector(array2);
         Vector vector5 = new Vector(array3);
-        Vector vector6=new Vector(array4);
+        Vector vector6 = new Vector(array4);
 
         System.out.println("vector = " + vector);
         System.out.println("vector1 = " + vector1);
@@ -36,7 +36,7 @@ public class Main {
         System.out.println(vector.setElement(2, 10));
         System.out.println(vector);
 
-        System.out.println(vector+"  "+vector1+"  "+vector2+"  "+vector3+"  "+vector4+"  "+vector5);
+        System.out.println(vector + "  " + vector1 + "  " + vector2 + "  " + vector3 + "  " + vector4 + "  " + vector5);
         System.out.println("Equals = " + vector.equals(vector1));
         System.out.println("Static additional of vectors = " + Vector.add(vector3, vector4));
         System.out.println("Static substracting of vectors = " + Vector.div(vector, vector5));
